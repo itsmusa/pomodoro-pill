@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Pill</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div id="stage">
+      <div
+        id="pill"
+        data-phase="focus"
+        data-status="ready"
+        data-warn="false"
+        data-armed="false"
+        data-tauri-drag-region
+      >
+        <span id="dot" data-tauri-drag-region>
+          <svg id="cup" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M5 8h11v7.5a3.5 3.5 0 0 1-3.5 3.5h-4A3.5 3.5 0 0 1 5 15.5V8Z" />
+            <path d="M16 9.5h1.5a2.5 2.5 0 0 1 0 5H16" />
+            <path d="M8 3.5v2M12 3.5v2M16 3.5v2" />
+          </svg>
+        </span>
+        <span id="time" data-tauri-drag-region>25:00</span>
+        <div id="track"><div id="fill"></div></div>
+        <div id="controls">
+          <button id="btn-main" type="button" aria-label="Pause">
+            <svg class="icon-pause" viewBox="0 0 16 16" aria-hidden="true">
+              <rect x="4" y="3" width="2.5" height="10" rx="1" />
+              <rect x="9.5" y="3" width="2.5" height="10" rx="1" />
+            </svg>
+            <svg class="icon-play" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M5 3.5v9l7-4.5-7-4.5Z" />
+            </svg>
+          </button>
+          <button id="btn-stop" type="button" aria-label="Stop">
+            <svg class="icon-stop" viewBox="0 0 16 16" aria-hidden="true">
+              <rect x="4" y="4" width="8" height="8" rx="1.5" />
+            </svg>
+            <svg class="icon-skip" viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M4 3.5v9l6-4.5-6-4.5Z" />
+              <rect x="11" y="3.5" width="2" height="9" rx="1" />
+            </svg>
+            <span class="armed-text">Stop?</span>
+          </button>
+        </div>
+        <button id="btn-start" type="button">Start</button>
+        <span id="label">
+          <span id="label-title">Break Time!</span>
+          <span id="label-sub">05:00 ready</span>
+        </span>
+      </div>
+    </div>
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>
